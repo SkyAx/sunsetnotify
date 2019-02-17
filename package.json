@@ -1,0 +1,11 @@
+{
+  "name": "sunsetnotify",
+  "version": "1.0.0",
+  "description": "Sunset notification on raspberry pi boarded",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "SkyAx",
+  "license": "ISC"
+}

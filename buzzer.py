@@ -9,7 +9,7 @@ args = parser.parse_args()
 
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
-count=args.s
+count=args.c
 delay=args.d
 buzzer=23
 GPIO.setup(buzzer,GPIO.OUT)

@@ -33,7 +33,7 @@ const checkSunset = cron.schedule(`0 0 9 * * *`, () => {
 });
 
 const nofity = cron.schedule(`0 ${sunsetMinutes} ${sunsetHour} * * *`, () =>{
-    cmd.get('python buzzer -c 7 -d 0.5', () => {
+    cmd.get('python buzzer.py -c 7 -d 0.5', () => {
         console.log('Ok')
     });
 });

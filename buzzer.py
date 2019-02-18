@@ -1,31 +1,16 @@
 import RPi.GPIO as GPIO
-import sys, getopt
+import argparse
 from time import sleep
 
-def main(argv):
-   count = 0
-   delay = 0
-   try:
-      opts, args = getopt.getopt(argv,"hi:o:",["count=","delay="])
-   except getopt.GetoptError:
-      print 'buzzer.py -c <count> -d <delay>'
-      sys.exit(2)
-   for opt, arg in opts:
-      if opt == '-h':
-         print 'buzzer.py -c <count> -d <delay>'
-         sys.exit()
-      elif opt in ("-c", "--cnt"):
-         count = arg
-      elif opt in ("-d", "--dly"):
-         delay = arg
-   print 'Count of buzz is "', count
-   print 'Delay of buzz is "', delay
-
-if __name__ == "__main__":
-   main(sys.argv[1:])
+parser = argparse.ArgumentParser(description='Process some integers.')
+parser.add_argument('-c', type=int, dest='count', help='count of buzz')
+parser.add_argument('-d', type=float, dest='delay', help='delay of buzz')
+args = parser.parse_args()
 
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
+count=args.s
+delay=args.d
 buzzer=23
 GPIO.setup(buzzer,GPIO.OUT)
 while count >= 0:

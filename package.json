@@ -9,6 +9,9 @@
   "author": "SkyAx",
   "license": "ISC",
   "dependencies": {
-    "node-cmd": "^3.0.0"
+    "got": "^9.6.0",
+    "node-cmd": "^3.0.0",
+    "node-cron": "^2.0.3",
+    "request": "^2.88.0"
   }
 }
